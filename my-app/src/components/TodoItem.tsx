@@ -8,11 +8,12 @@ interface ITodoItemProps {
 }
 
 const TodoItem: React.FC<ITodoItemProps> = (props) => {
-  const itemDelete = () => {
-    props.itemDelete(props.index)
+  const { itemDelete, index, message } = props
+  const deleteMe = () => {
+    itemDelete(index)
   }
   return (
-      <li onClick={() => itemDelete()}> {props.message} </li>
+      <li onClick={() => deleteMe()}> { message } </li>
     )
 }
 

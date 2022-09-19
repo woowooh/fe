@@ -3,10 +3,10 @@ import TodoItem from './TodoItem'
 
 
 const Todo: React.FC = () => {
-  const [items, setItems ] = useState([{message: 'ww'}])
+  const [items, setItems ] = useState([{ message: 'ww' }])
   const [input, setInput] = useState<any>("")
   const addItem = () => {
-    const item2 = [...items, {message: input}]
+    const item2 = [...items, { message: input }]
     setItems(item2)
     setInput("")
   }
@@ -20,9 +20,9 @@ const Todo: React.FC = () => {
   }
   return (
     <ul >
-      <input onChange={ handleOnChange } value={input}/>
+      <input onChange={ handleOnChange } value={ input }/>
       { items.map((item, index) => {
-          return (<TodoItem key={index} index={index} message={item.message} itemDelete={handleDelete}/>)
+          return (<TodoItem key={index} index={ index } message={ item.message } itemDelete={ handleDelete }/>)
         })
       }
       <button onClick={ addItem }>addItem</button>
