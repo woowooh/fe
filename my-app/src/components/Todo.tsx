@@ -18,13 +18,15 @@ const Todo: React.FC = () => {
     l2.splice(index, 1)
     setItems(l2)
   }
+  const getTodoItem = () => {
+    return items.map((item, index) => {
+        return (<TodoItem key={index} index={ index } message={ item.message } itemDelete={ handleDelete }/>)
+      })
+  }
   return (
     <ul >
       <input onChange={ handleOnChange } value={ input }/>
-      { items.map((item, index) => {
-          return (<TodoItem key={index} index={ index } message={ item.message } itemDelete={ handleDelete }/>)
-        })
-      }
+      { getTodoItem() }
       <button onClick={ addItem }>addItem</button>
     </ul>)
 }
