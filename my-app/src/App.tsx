@@ -6,6 +6,7 @@ import LikeButton from './components/LikeButton'
 import MouseTracker from './components/MouseTracker'
 import useMousePosition from './hooks/useMousePosition'
 import useUrlLoader from './hooks/useUrlLoader'
+import Todo from "./components/Todo"
 import './App.css';
 
 interface IShowResult {
@@ -40,6 +41,7 @@ const App: React.FC = () => {
         >
           Learn React
         </a> 
+        <Todo />
       </header>
     </div>
   );
