@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,  } from 'react'
 
 const useMousePosition = () => {
   const [ positions, setPositions ] = useState({ x: 0, y: 0 })
@@ -13,7 +13,7 @@ const useMousePosition = () => {
       console.log("remove effect", positions.x)
       document.removeEventListener('mousemove', updateMouse)
     }
-  }, [])
+  }, ['www'])
   return positions
 }
 

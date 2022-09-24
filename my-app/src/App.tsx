@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useMemo} from 'react';
 
 import logo from './logo.svg';
 import Hello from './components/Hello'
 import LikeButton from './components/LikeButton'
-import MouseTracker from './components/MouseTracker'
-import useMousePosition from './hooks/useMousePosition'
+// import MouseTracker from './components/MouseTracker'
+// import useMousePosition from './hooks/useMousePosition'
 import useUrlLoader from './hooks/useUrlLoader'
 import Todo from "./components/Todo"
 import './App.css';
@@ -16,7 +16,7 @@ interface IShowResult {
 
 const App: React.FC = () => {
   const [ show, setShow] = useState(true)
-  const positions = useMousePosition()
+  // const positions = useMousePosition()
   const [data, loading] = useUrlLoader('https://dog.ceo/api/breeds/image/random', [show])
   const dogResult = data as IShowResult
 
@@ -30,9 +30,9 @@ const App: React.FC = () => {
         { loading ? <p> 🐶读取中 </p>
           : <img src={dogResult && dogResult.message } />}
         <p> 
-          X: {positions.x} Y: {positions.y}
+           {/*X: {positions.x} Y: {positions.y}*/}
         </p>
-        <LikeButton />
+        {/*<LikeButton />*/}
         <a
           className="App-link"
           href="https://reactjs.org"

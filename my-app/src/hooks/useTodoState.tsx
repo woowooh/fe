@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo, useCallback } from 'react'
 import TodoItem from '../components/TodoItem'
 
 
 const useTodoState = () => {
+  console.log("call render")
   const [items, setItems ] = useState([
       { message: 'ww' }
     ])
@@ -20,11 +21,11 @@ const useTodoState = () => {
     l2.splice(index, 1)
     setItems(l2)
   }
-  const getTodoItem = () => {
+  const getTodoItem = useCallback(() => {
     return items.map((item, index) => {
         return (<TodoItem key={index} index={ index } message={ item.message } itemDelete={ handleDelete }/>)
       })
-  }
+  }, [items])
   return [items, input, addItem, handleOnChange, handleDelete, getTodoItem]
 }
 

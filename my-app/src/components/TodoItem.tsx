@@ -12,6 +12,7 @@ const TodoItem: React.FC<ITodoItemProps> = (props) => {
   const deleteMe = () => {
     itemDelete(index)
   }
+  console.log("child render")
   return (
       <li onClick={() => deleteMe()}> { message } </li>
     )
